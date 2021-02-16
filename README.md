@@ -1,14 +1,22 @@
-# Welcome to your CDK TypeScript project!
+https://github.com/cdk-patterns/serverless/tree/main/polly
 
-This is a blank project for TypeScript development with CDK.
+Changing the voice
+You can pick from 3 voices "Matthew" (the default), "Joanna" or "Lupe". This is using the newsreader style of voice which AWS recently launched so it currently only supports these 3.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+To change voices just add a query param onto your url like:
 
-## Useful commands
+https://{api-url}/?voice=Lupe
+https://{api-url}/?voice=Joanna
+https://{api-url}/?voice=Matthew
+Changing the language spoken
+This Lambda Function is integrated with Amazon Translate so you can have Polly speak a variety of languages
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+To have Lupe speak Spanish just add the translateTo query param
+
+https://{api-url}/?voice=Lupe&translateTo=es
+If the text you are translating is in a language other than english you can use the translateFrom parameter
+
+To understand what languages are possible please refer to the documentation
+
+Changing the text
+If you use a tool like Postman to send text in the body of a POST request to the url it will use Polly to synthesize your text
