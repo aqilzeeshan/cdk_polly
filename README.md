@@ -1,3 +1,6 @@
+# Next Step
+https://aws.amazon.com/blogs/machine-learning/build-your-own-text-to-speech-applications-with-amazon-polly/
+
 # Polly Pattern
 
 ![overview image](https://github.com/aqilzeeshan/serverless/blob/main/polly/img/overview.png)
